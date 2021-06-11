@@ -17,7 +17,7 @@ const WorksContainer = styled.section`
   flex-firection: column;
   .WorkItem {
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding-bottom: 80px;
     position: relative;
     display: flex;
@@ -30,18 +30,31 @@ const WorksContainer = styled.section`
       justify-content: center;
       width: 100%;
       height: 100%;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+      }
+
+      /**/
+
       .col_1 {
         width: 40%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @media (max-width: 1024px) {
+          width: 100%;
+          height: auto;
+        }
         span {
           font-family: exil;
           font-size: 5vw;
           color: #252525;
           height: 50%;
           width: auto;
+          @media (max-width: 1024px) {
+            font-size: 7vw;
+          }
         }
         #worklink {
           display: flex;
@@ -59,23 +72,43 @@ const WorksContainer = styled.section`
             color: #252525;
             writing-mode: vertical-lr;
           }
+          @media (max-width: 1024px) {
+            flex-direction: row;
+            margin-top: 20px;
+            span {
+              writing-mode: horizontal-tb;
+            }
+          }
         }
       }
       .col_2 {
-        background-color: burlywood;
         width: 60%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        img {
+        justify-content: space-between;
+        @media (max-width: 1024px) {
+          margin-top: 10px;
           width: 100%;
-          object-fit: contain;
+          height: auto;
+        }
+        .img {
+          max-width: 100%;
+          max-height: 512px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
         span {
           line-height: 95%;
           font-family: exil;
           font-size: 3vw;
+          @media (max-width: 1024px) {
+            width: 100%;
+            height: auto;
+            font-size: 6vw;
+          }
         }
       }
     }
@@ -98,7 +131,9 @@ function Works() {
             </span>
           </div>
           <div className="col_2">
-            <img src={bg} />
+            <div className="img">
+              <img src={bg} />
+            </div>
             <span>
               CORONAVIRUS
               <br />
