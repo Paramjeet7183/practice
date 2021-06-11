@@ -1,13 +1,11 @@
 export const works = [
   {
-    name: "coronavirus",
-    name2: "tracker",
+    name: "coronavirus\ntracker",
     type: "WEBDEVELOPMENT",
     id: 1,
   },
   {
-    name: "instagram",
-    name2: "clone",
+    name: "instagram\nclone",
     type: "WEBDEVELOPMENT",
     id: 2,
   },

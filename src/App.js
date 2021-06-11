@@ -28,8 +28,17 @@ function App() {
   }, [root.style]);
   return (
     <>
-      <Nav />
-      <Home />
+      <Router>
+        <Nav />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/work/:id">
+            <Work />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }

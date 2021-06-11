@@ -153,8 +153,6 @@ function Works() {
               <TextinView>
                 <span>
                   <a>{work.name}</a>
-                  <br />
-                  <a>{work.name2}</a>
                 </span>
               </TextinView>
             </div>
