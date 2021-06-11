@@ -62,7 +62,7 @@ function Nav() {
     <NavContainer>
       <div className="NavItems">
         <span>
-          <a href="">Paramjeet Singh</a>
+          <a href="/">Paramjeet Singh</a>
         </span>
         <span id="links">
           <motion.a
@@ -85,7 +85,7 @@ function Nav() {
               ease: "easeOut",
             }}
             id="work"
-            href=""
+            href="/"
           >
             Work
           </motion.a>

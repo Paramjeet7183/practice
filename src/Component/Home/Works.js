@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ImageBox, TextinView, LineinView } from "../Animation";
 import bg from "../bg.jpg";
 import { works } from "../Data";
+import { useLocation, Link } from "react-router-dom";
 
 const Line = styled.div`
   width: 100%;
@@ -137,9 +138,14 @@ function Works() {
             <div className="col_1">
               <span>0{work.id}/</span>
               <span id="worklink">
-                <a href="">
+                <Link
+                  to={{
+                    pathname: `work/${work.id}`,
+                    state: { works: work },
+                  }}
+                >
                   <i className="fal fa-external-link-square" />
-                </a>
+                </Link>
                 <span>{work.type}</span>
               </span>
             </div>
@@ -147,7 +153,14 @@ function Works() {
             <div className="col_2">
               <div className="img">
                 <ImageBox>
-                  <img src={bg} />
+                  <Link
+                    to={{
+                      pathname: `work/${work.id}`,
+                      state: { works: work },
+                    }}
+                  >
+                    <img src={work.bg} />
+                  </Link>
                 </ImageBox>
               </div>
               <TextinView>
