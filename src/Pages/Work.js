@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import hoverEffect from "hover-effect";
 import Mask from "../Assets/heightMap.webp";
+import Footer from "../Component/Footer";
 const Line = styled.div`
   width: 100%;
   height: 1px;
@@ -77,6 +78,23 @@ const Desc = styled.div`
     }
   }
 `;
+const Lang = styled.div`
+  width: 100%;
+  height: auto;
+  p {
+    margin-left: 10%;
+    width: auto;
+    font-size: 2rem;
+    font-family: monument;
+    color: #252525;
+    word-spacing: 10px;
+    @media (max-width: 1024px) {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+`;
+
 const ImageGrid = styled.div`
   padding-top: 150px;
   width: 90vw;
@@ -179,6 +197,9 @@ function Work() {
         <Desc>
           <p>{state.works.details}</p>
         </Desc>
+        <Lang>
+          <p>{state.works.lang}</p>
+        </Lang>
       </Details>
       <ImageGrid>
         <img src={state.works.bg} />
@@ -196,6 +217,7 @@ function Work() {
           <img src={state.works.tab2} />
         </div>
       </Device>
+      <Footer />
     </Container>
   );
 }

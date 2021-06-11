@@ -4,6 +4,7 @@ import { ImageBox, TextinView, LineinView } from "../Animation";
 import bg from "../bg.jpg";
 import { works } from "../Data";
 import { useLocation, Link } from "react-router-dom";
+import Footer from "../Footer";
 
 const Line = styled.div`
   width: 100%;
@@ -172,6 +173,7 @@ function Works() {
           </div>
         </div>
       ))}
+      <Footer />
     </WorksContainer>
   );
 }

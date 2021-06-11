@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import Nav from "./Component/Nav";
+import Footer from "./Component/Footer";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

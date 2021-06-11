@@ -15,6 +15,7 @@ export const works = [
     mob2: `${mob1_2}`,
     tab1: `${tab1_1}`,
     tab2: `${tab1_2}`,
+    lang: "React\nHtml\nCss\nJs\nMaterial Ui",
   },
   {
     name: "instagram\nclone",
@@ -27,5 +28,6 @@ export const works = [
     mob2: `${mob1_2}`,
     tab1: `${tab1_1}`,
     tab2: `${tab1_2}`,
+    lang: "React\nHtml\nCss\nJs\nMaterial Ui",
   },
 ];
