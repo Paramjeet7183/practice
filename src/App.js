@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import Nav from "./Component/Nav";
+import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -26,20 +27,22 @@ function App() {
     root.style.setProperty("--VW", `${window.innerWidth * 0.01}px`);
     root.style.setProperty("--VH", `${window.innerHeight * 0.01}px`);
   }, [root.style]);
+
   return (
-    <>
+    <div className="App">
       <Router>
-        <Nav />
         <Switch>
           <Route path="/" exact>
+            <Nav border="#252525" />
             <Home />
           </Route>
-          <Route path="/work/:id">
+          <Route path="/work/:id" exact>
+            <Nav border="#e7e7e7" />
             <Work />
           </Route>
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 

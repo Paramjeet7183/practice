@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { expandLine } from "./Animation";
 
-export const Line = styled(motion.div)`
+const Line = styled(motion.div)`
   height: 1px;
   width: 100%;
-  background-color: #252525;
+  background-color: ${(props) => props.border};
 `;
 const NavContainer = styled.section`
   position: relative;
@@ -16,6 +16,7 @@ const NavContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 999;
   .NavItems {
     display: flex;
     flex-direction: row;
@@ -27,7 +28,6 @@ const NavContainer = styled.section`
     }
     a {
       padding-bottom: 20px;
-      color: #252525;
       text-decoration: none;
     }
     #links {
@@ -57,15 +57,18 @@ const NavContainer = styled.section`
     }
   }
 `;
-function Nav() {
+function Nav({ border }) {
   return (
     <NavContainer>
       <div className="NavItems">
         <span>
-          <a href="/">Paramjeet Singh</a>
+          <a style={{ color: `${border}` }} href="/">
+            Paramjeet Singh
+          </a>
         </span>
         <span id="links">
           <motion.a
+            style={{ color: `${border}` }}
             whileHover={{ transform: "translateY(-100%)" }}
             transition={{
               duration: 0.5,
@@ -78,6 +81,7 @@ function Nav() {
             About
           </motion.a>
           <motion.a
+            style={{ color: `${border}` }}
             whileHover={{ transform: "translateY(-100%)" }}
             transition={{
               duration: 0.5,
@@ -92,6 +96,7 @@ function Nav() {
         </span>
       </div>
       <Line
+        border={border}
         variants={expandLine}
         initial="initial"
         animate="animate"
