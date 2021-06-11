@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { expandLine } from "../Animation";
+import { ImageBox, TextinView, LineinView } from "../Animation";
 import bg from "../bg.jpg";
+import { works } from "../Data";
 
 const Line = styled.div`
   width: 100%;
@@ -11,10 +11,11 @@ const Line = styled.div`
 `;
 const WorksContainer = styled.section`
   width: 100%;
-  height: auto;
+  height: 100vh;
   position: relative;
   display: flex;
-  flex-firection: column;
+  flex-direction: column;
+  justify-content: space-between;
   .WorkItem {
     width: 100%;
     height: auto;
@@ -41,10 +42,10 @@ const WorksContainer = styled.section`
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         @media (max-width: 1024px) {
           width: 100%;
-          height: auto;
+          height: 100%;
         }
         span {
           font-family: exil;
@@ -70,6 +71,7 @@ const WorksContainer = styled.section`
             font-family: grotesk;
             font-size: 1rem;
             color: #252525;
+            tetx-transform: uppercase;
             writing-mode: vertical-lr;
           }
           @media (max-width: 1024px) {
@@ -95,15 +97,23 @@ const WorksContainer = styled.section`
         .img {
           max-width: 100%;
           max-height: 512px;
+          overflow: hidden;
           img {
             width: 100%;
             height: 100%;
           }
         }
         span {
+          display: block;
+          padding-bottom: 5%;
           line-height: 95%;
           font-family: exil;
+          text-transform: uppercase;
           font-size: 3vw;
+          overflow: hidden;
+          a {
+            display: inline-block;
+          }
           @media (max-width: 1024px) {
             width: 100%;
             height: auto;
@@ -118,30 +128,39 @@ const WorksContainer = styled.section`
 function Works() {
   return (
     <WorksContainer>
-      <div className="WorkItem">
-        <Line />
-        <div className="columns">
-          <div className="col_1">
-            <span>01/</span>
-            <span id="worklink">
-              <a href="">
-                <i className="fal fa-external-link-square" />
-              </a>
-              <span>WEBDEVELOPMENT</span>
-            </span>
-          </div>
-          <div className="col_2">
-            <div className="img">
-              <img src={bg} />
+      {works.map((work) => (
+        <div className="WorkItem">
+          <LineinView>
+            <Line />
+          </LineinView>
+          <div className="columns">
+            <div className="col_1">
+              <span>0{work.id}/</span>
+              <span id="worklink">
+                <a href="">
+                  <i className="fal fa-external-link-square" />
+                </a>
+                <span>{work.type}</span>
+              </span>
             </div>
-            <span>
-              CORONAVIRUS
-              <br />
-              TRACKER
-            </span>
+
+            <div className="col_2">
+              <div className="img">
+                <ImageBox>
+                  <img src={bg} />
+                </ImageBox>
+              </div>
+              <TextinView>
+                <span>
+                  <a>{work.name}</a>
+                  <br />
+                  <a>{work.name2}</a>
+                </span>
+              </TextinView>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </WorksContainer>
   );
 }

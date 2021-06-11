@@ -1,7 +1,11 @@
+import { useInView } from "react-intersection-observer";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+
 export const textReveal = {
   initial: {
     opacity: 0,
-    y: "15vh",
+    y: "200%",
   },
   animate: {
     opacity: 1,
@@ -15,4 +19,90 @@ export const expandLine = {
   animate: {
     width: "100%",
   },
+};
+
+export const expandDiv = {
+  initial: {
+    y: "40%",
+    scale: 1.3,
+  },
+  animate: {
+    y: 0,
+    scale: 1,
+  },
+};
+export const ImageBox = ({ children }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [controls, inView]);
+  return (
+    <motion.div
+      ref={ref}
+      variants={expandDiv}
+      initial="initial"
+      animate={controls}
+      transition={{
+        duration: 1,
+        type: "Spring",
+        ease: "easeOut",
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+export const TextinView = ({ children }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [controls, inView]);
+  return (
+    <motion.div
+      ref={ref}
+      variants={textReveal}
+      initial="initial"
+      animate={controls}
+      transition={{
+        duration: 1,
+        type: "Tween",
+        ease: [0.6, -0.05, 0.01, 0.9],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+export const LineinView = ({ children }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [controls, inView]);
+  return (
+    <motion.div
+      ref={ref}
+      variants={expandLine}
+      initial="initial"
+      animate={controls}
+      transition={{
+        duration: 1.2,
+        type: "Tween",
+        ease: [0.6, -0.05, 0.01, 0.9],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
 };

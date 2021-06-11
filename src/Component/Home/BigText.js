@@ -13,7 +13,7 @@ function BigText() {
             type: "Tween",
             delay: 0.5,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.6, -0.05, 0.01, 0.9],
           }}
         >
           UI/UX
@@ -27,7 +27,7 @@ function BigText() {
             type: "Tween",
             delay: 0.8,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.6, -0.05, 0.01, 0.9],
           }}
         >
           DESIGNER
@@ -41,7 +41,7 @@ function BigText() {
             type: "Tween",
             delay: 1.1,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.6, -0.05, 0.01, 0.9],
           }}
         >
           + WEB
@@ -55,7 +55,7 @@ function BigText() {
             type: "Tween",
             delay: 1.4,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.6, -0.05, 0.01, 0.9],
           }}
         >
           DEVELOPER
@@ -68,7 +68,7 @@ function BigText() {
             type: "Tween",
             delay: 1.7,
             duration: 1,
-            ease: "easeOut",
+            ease: [0.6, -0.05, 0.01, 0.9],
           }}
           id="foot"
         >
