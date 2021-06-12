@@ -97,7 +97,7 @@ function Footer() {
             ease: "easeOut",
           }}
           id="github"
-          href=""
+          href="https://github.com/Paramjeet7183"
         >
           Github
         </motion.a>
@@ -109,7 +109,7 @@ function Footer() {
             ease: "easeOut",
           }}
           id="linkedin"
-          href=""
+          href="https://www.linkedin.com/in/paramjeetsingh7183/"
         >
           LinkedIn
         </motion.a>
@@ -121,7 +121,7 @@ function Footer() {
             ease: "easeOut",
           }}
           id="gmail"
-          href=""
+          href="mailto:paramjeet7183@gmail.com"
         >
           Paramjeet7183@gmail.com
         </motion.a>
@@ -133,7 +133,7 @@ function Footer() {
             ease: "easeOut",
           }}
           id="twitter"
-          href=""
+          href="https://twitter.com/Paramje183"
         >
           Twitter
         </motion.a>
@@ -145,7 +145,7 @@ function Footer() {
             ease: "easeOut",
           }}
           id="dribble"
-          href=""
+          href="https://dribbble.com/Param7183"
         >
           Dribble
         </motion.a>
