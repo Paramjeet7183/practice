@@ -131,7 +131,7 @@ function Works() {
   return (
     <WorksContainer>
       {works.map((work) => (
-        <div className="WorkItem">
+        <div key={work.id} className="WorkItem">
           <LineinView>
             <Line />
           </LineinView>

@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
+import AnimatedCursor from "./Component/Cursor";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -30,20 +31,28 @@ function App() {
   }, [root.style]);
 
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <Nav border="#252525" />
-            <Home />
-          </Route>
-          <Route path="/work/:id" exact>
-            <Nav border="#e7e7e7" />
-            <Work />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <AnimatedCursor />
+      <div className="grain"></div>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <Nav border="#252525" />
+              <Home />
+            </Route>
+            <Route path="/work/:id" exact>
+              <Nav border="#e7e7e7" />
+              <Work />
+            </Route>
+            <Route path="/About" exact>
+              <Nav border="#252525" />
+              <About />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </>
   );
 }
 

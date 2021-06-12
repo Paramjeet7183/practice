@@ -76,7 +76,7 @@ function Nav({ border }) {
               ease: "easeOut",
             }}
             id="about"
-            href=""
+            href="/About"
           >
             About
           </motion.a>

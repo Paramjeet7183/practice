@@ -1,9 +1,11 @@
 import React, { useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import hoverEffect from "hover-effect";
 import Mask from "../Assets/heightMap.webp";
 import Footer from "../Component/Footer";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+
 const Line = styled.div`
   width: 100%;
   height: 1px;
@@ -168,6 +170,7 @@ const Device = styled.div`
   }
 `;
 function Work() {
+  const containerRef = useRef(null);
   const { state } = useLocation();
   const profile = useRef(null);
   useEffect(() => {
@@ -180,45 +183,52 @@ function Work() {
     });
   });
   return (
-    <Container>
-      <div ref={profile} className="image">
-        <span>{state.works.name}</span>
-      </div>
-      <Details>
-        <Line />
-        <Links>
-          <a href="">
-            <i class="fas fa-external-link-square-alt" />
-          </a>
-          <a href="">
-            <i class="fab fa-github-square" />
-          </a>
-        </Links>
-        <Desc>
-          <p>{state.works.details}</p>
-        </Desc>
-        <Lang>
-          <p>{state.works.lang}</p>
-        </Lang>
-      </Details>
-      <ImageGrid>
-        <img src={state.works.bg} />
-        <img src={state.works.bg} />
-        <img src={state.works.bg} />
-        <img src={state.works.bg} />
-      </ImageGrid>
-      <Device>
-        <div className="Mob">
-          <img src={state.works.mob1} />
-          <img src={state.works.mob2} />
+    <LocomotiveScrollProvider
+      options={{
+        smooth: true,
+      }}
+      containerRef={containerRef}
+    >
+      <Container data-scroll-container ref={containerRef}>
+        <div ref={profile} className="image">
+          <span>{state.works.name}</span>
         </div>
-        <div className="Tab">
-          <img src={state.works.tab1} />
-          <img src={state.works.tab2} />
-        </div>
-      </Device>
-      <Footer />
-    </Container>
+        <Details>
+          <Line />
+          <Links>
+            <a href="">
+              <i class="fas fa-external-link-square-alt" />
+            </a>
+            <a href="">
+              <i class="fab fa-github-square" />
+            </a>
+          </Links>
+          <Desc>
+            <p>{state.works.details}</p>
+          </Desc>
+          <Lang>
+            <p>{state.works.lang}</p>
+          </Lang>
+        </Details>
+        <ImageGrid>
+          <img src={state.works.bg} />
+          <img src={state.works.bg} />
+          <img src={state.works.bg} />
+          <img src={state.works.bg} />
+        </ImageGrid>
+        <Device>
+          <div className="Mob">
+            <img src={state.works.mob1} />
+            <img src={state.works.mob2} />
+          </div>
+          <div className="Tab">
+            <img src={state.works.tab1} />
+            <img src={state.works.tab2} />
+          </div>
+        </Device>
+        <Footer />
+      </Container>
+    </LocomotiveScrollProvider>
   );
 }
 

@@ -15,7 +15,7 @@ export const works = [
     mob2: `${mob1_2}`,
     tab1: `${tab1_1}`,
     tab2: `${tab1_2}`,
-    lang: "React\nHtml\nCss\nJs\nMaterial Ui",
+    lang: "React\nHtml\nCss\nJs\nMaterial Ui\nDisease.sh API",
   },
   {
     name: "instagram\nclone",
@@ -31,3 +31,10 @@ export const works = [
     lang: "React\nHtml\nCss\nJs\nMaterial Ui",
   },
 ];
+/*
+परमजीत
+パラメータ
+パラムジート
+  font-family: "Teko", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
+*/
