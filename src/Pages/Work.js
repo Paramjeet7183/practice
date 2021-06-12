@@ -4,12 +4,13 @@ import styled from "styled-components";
 import hoverEffect from "hover-effect";
 import Mask from "../Assets/heightMap.webp";
 import Footer from "../Component/Footer";
+import { Showtext } from "../Component/Animation";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #252525;
+  background-color: #e7e7e7;
 `;
 const Container = styled.section`
   width: 100vw;
@@ -24,6 +25,10 @@ const Container = styled.section`
     height: 100vh;
     background-size: cover;
     background-position: center;
+    img {
+      width: 100%;
+      height: 100%;
+    }
     span {
       display: block;
       width: 90vw;
@@ -59,7 +64,7 @@ const Links = styled.div`
   flex-direction: row;
   justify-content: space-between;
   a {
-    color: #252525;
+    color: #e7e7e7;
     text-decoration: none;
     font-size: 3rem;
   }
@@ -72,7 +77,7 @@ const Desc = styled.div`
     width: 30vw;
     font-size: 1.5rem;
     font-family: grotesk;
-    color: #252525;
+    color: #e7e7e7;
     word-spacing: 10px;
     @media (max-width: 1024px) {
       margin-left: 0%;
@@ -88,7 +93,7 @@ const Lang = styled.div`
     width: auto;
     font-size: 2rem;
     font-family: monument;
-    color: #252525;
+    color: #e7e7e7;
     word-spacing: 10px;
     @media (max-width: 1024px) {
       margin-left: 0%;
@@ -172,16 +177,7 @@ const Device = styled.div`
 function Work() {
   const containerRef = useRef(null);
   const { state } = useLocation();
-  const profile = useRef(null);
-  useEffect(() => {
-    new hoverEffect({
-      parent: profile.current,
-      intensity: 1.4,
-      image1: `${state.works.bg}`,
-      image2: `${state.works.bg}`,
-      displacementImage: Mask,
-    });
-  });
+
   return (
     <LocomotiveScrollProvider
       options={{
@@ -190,7 +186,8 @@ function Work() {
       containerRef={containerRef}
     >
       <Container data-scroll-container ref={containerRef}>
-        <div ref={profile} className="image">
+        <div className="image">
+          <img src={state.works.bg} />
           <span>{state.works.name}</span>
         </div>
         <Details>
@@ -204,7 +201,9 @@ function Work() {
             </a>
           </Links>
           <Desc>
-            <p>{state.works.details}</p>
+            <Showtext>
+              <p>{state.works.details}</p>
+            </Showtext>
           </Desc>
           <Lang>
             <p>{state.works.lang}</p>

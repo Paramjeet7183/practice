@@ -5,19 +5,18 @@ import Works from "../Component/Home/Works";
 
 const HomeContainer = styled.section`
   width: 90vw;
-  height: auto;
   margin: 0 auto;
   position: relative;
   .textblock {
     margin: 0 auto;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: relative;
     .Textwrapper {
       font-family: exil;
-      color: #252525;
+      color: #e7e7e7;
       font-size: 7.5vw;
-      line-height: 93%;
+      line-height: 100%;
       position: absolute;
       width: auto;
       height: auto;
@@ -28,13 +27,13 @@ const HomeContainer = styled.section`
         display: inline-block;
       }
       #foot {
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         span {
           font-size: 1rem;
-          color: #252525;
+          color: #e7e7e7;
           font-family: grotesk;
         }
       }

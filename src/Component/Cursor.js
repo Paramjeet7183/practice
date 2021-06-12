@@ -1,193 +1,72 @@
 import React from "react";
-function useEventListener(eventName, handler, element = document) {
-  const savedHandler = React.useRef();
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import useMousePosition from "../hooks/useMouse";
 
-  React.useEffect(() => {
-    savedHandler.current = handler;
-  }, [handler]);
+const CursorStyles = styled(motion.div)`
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0.36vw;
+  height: 0.36vw;
+  padding: 1.5vw;
+  border-radius: 100%;
+  background-color: #e7e7e7;
+  border: 0.1vw solid #e7e7e7;
+  mix-blend-mode: difference;
+  z-index: 20;
+  @media (hover: none) and (pointer: coarse), (max-width: 500px) {
+    display: none;
+  }
+`;
 
-  React.useEffect(() => {
-    const isSupported = element && element.addEventListener;
-    if (!isSupported) return;
+const PointerStyles = styled.div`
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0.6vw;
+  height: 0.6vw;
+  border-radius: 100%;
+  background-color: #e7e7e7;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  &.on-focus {
+    background-color: transparent;
+  }
+  @media (hover: none) and (pointer: coarse), (max-width: 500px) {
+    display: none;
+  }
+`;
 
-    const eventListener = (event) => savedHandler.current(event);
-
-    element.addEventListener(eventName, eventListener);
-
-    return () => {
-      element.removeEventListener(eventName, eventListener);
-    };
-  }, [eventName, element]);
-}
-
-function AnimatedCursor({
-  color = "0, 0, 0",
-  outerAlpha = 0.4,
-  innerSize = 40,
-  outerSize = 40,
-  outerScale = 2,
-  innerScale = 0.7,
-}) {
-  const cursorOuterRef = React.useRef();
-  const cursorInnerRef = React.useRef();
-  const requestRef = React.useRef();
-  const previousTimeRef = React.useRef();
-  const [coords, setCoords] = React.useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = React.useState(true);
-  const [isActive, setIsActive] = React.useState(false);
-  const [isActiveClickable, setIsActiveClickable] = React.useState(false);
-  let endX = React.useRef(0);
-  let endY = React.useRef(0);
-
-  const onMouseMove = React.useCallback(({ clientX, clientY }) => {
-    setCoords({ x: clientX, y: clientY });
-    cursorInnerRef.current.style.top = clientY + "px";
-    cursorInnerRef.current.style.left = clientX + "px";
-    endX.current = clientX;
-    endY.current = clientY;
-  }, []);
-
-  const animateOuterCursor = React.useCallback(
-    (time) => {
-      if (previousTimeRef.current !== undefined) {
-        coords.x += (endX.current - coords.x) / 8;
-        coords.y += (endY.current - coords.y) / 8;
-        cursorOuterRef.current.style.top = coords.y + "px";
-        cursorOuterRef.current.style.left = coords.x + "px";
-      }
-      previousTimeRef.current = time;
-      requestRef.current = requestAnimationFrame(animateOuterCursor);
-    },
-    [requestRef] // eslint-disable-line
-  );
-
-  React.useEffect(
-    () => (requestRef.current = requestAnimationFrame(animateOuterCursor)),
-    [animateOuterCursor]
-  );
-
-  const onMouseDown = React.useCallback(() => setIsActive(true), []);
-  const onMouseUp = React.useCallback(() => setIsActive(false), []);
-  const onMouseEnter = React.useCallback(() => setIsVisible(true), []);
-  const onMouseLeave = React.useCallback(() => setIsVisible(false), []);
-
-  useEventListener("mousemove", onMouseMove, document);
-  useEventListener("mousedown", onMouseDown, document);
-  useEventListener("mouseup", onMouseUp, document);
-  useEventListener("mouseenter", onMouseEnter, document);
-  useEventListener("mouseleave", onMouseLeave, document);
-
-  React.useEffect(() => {
-    if (isActive) {
-      cursorInnerRef.current.style.transform = `scale(${innerScale})`;
-      cursorOuterRef.current.style.transform = `scale(${outerScale})`;
-    } else {
-      cursorInnerRef.current.style.transform = "scale(1)";
-      cursorOuterRef.current.style.transform = "scale(1)";
-    }
-  }, [innerScale, outerScale, isActive]);
-
-  React.useEffect(() => {
-    if (isActiveClickable) {
-      cursorInnerRef.current.style.transform = `scale(${innerScale * 1.3})`;
-      cursorOuterRef.current.style.transform = `scale(${outerScale * 1.4})`;
-    }
-  }, [innerScale, outerScale, isActiveClickable]);
-
-  React.useEffect(() => {
-    if (isVisible) {
-      cursorInnerRef.current.style.opacity = 1;
-      cursorOuterRef.current.style.opacity = 1;
-    } else {
-      cursorInnerRef.current.style.opacity = 0;
-      cursorOuterRef.current.style.opacity = 0;
-    }
-  }, [isVisible]);
-
-  React.useEffect(() => {
-    const clickables = document.querySelectorAll(
-      'a, input[type="submit"], input[type="image"], label[for], select, button, .link'
-    );
-    clickables.forEach((el) => {
-      el.style.cursor = "none";
-
-      el.addEventListener("mouseover", () => {
-        setIsActive(true);
-      });
-      el.addEventListener("click", () => {
-        setIsActive(true);
-        setIsActiveClickable(false);
-      });
-      el.addEventListener("mousedown", () => {
-        setIsActiveClickable(true);
-      });
-      el.addEventListener("mouseup", () => {
-        setIsActive(true);
-      });
-      el.addEventListener("mouseout", () => {
-        setIsActive(false);
-        setIsActiveClickable(false);
-      });
-    });
-
-    return () => {
-      clickables.forEach((el) => {
-        el.removeEventListener("mouseover", () => {
-          setIsActive(true);
-        });
-        el.removeEventListener("click", () => {
-          setIsActive(true);
-          setIsActiveClickable(false);
-        });
-        el.removeEventListener("mousedown", () => {
-          setIsActiveClickable(true);
-        });
-        el.removeEventListener("mouseup", () => {
-          setIsActive(true);
-        });
-        el.removeEventListener("mouseout", () => {
-          setIsActive(false);
-          setIsActiveClickable(false);
-        });
-      });
-    };
-  }, [isActive]);
-
-  const styles = {
-    cursor: {
-      zIndex: 999,
-      position: "fixed",
-      opacity: 1,
-      pointerEvents: "none",
-      transition: "opacity 0.5s ease-in-out, transform 1s ease-in-out",
-    },
-    cursorInner: {
-      position: "fixed",
-      borderRadius: "50%",
-      width: innerSize,
-      height: innerSize,
-      pointerEvents: "none",
-      backgroundColor: "transparent",
-      border: "1px solid black",
-      transition: "opacity 0.5s ease-in-out, transform 1s ease-in-out",
-    },
-    cursorOuter: {
-      position: "fixed",
-      borderRadius: "50%",
-      pointerEvents: "none",
-      width: outerSize,
-      height: outerSize,
-      backgroundColor: `rgba(${color}, ${outerAlpha})`,
-      transition: "opacity 0.5s ease-in-out, transform 1s ease-in-out",
-    },
-  };
+const Cursor = () => {
+  const { x, y } = useMousePosition();
 
   return (
-    <React.Fragment>
-      <div ref={cursorOuterRef} style={styles.cursorOuter} />
-      <div ref={cursorInnerRef} style={styles.cursorInner} />
-    </React.Fragment>
+    <>
+      <CursorStyles
+        animate={{
+          top: y,
+          left: x,
+          x: "-50%",
+          y: "-50%",
+          scale: 1,
+          opacity: 0.15,
+          border: "none",
+          backgroundColor: "#e7e7e7",
+        }}
+        transition={{ ease: "linear", duration: 0.15 }}
+      />
+      <PointerStyles
+        className={""}
+        style={{
+          top: y,
+          left: x,
+        }}
+      />
+    </>
   );
-}
+};
 
-export default AnimatedCursor;
+export { Cursor };

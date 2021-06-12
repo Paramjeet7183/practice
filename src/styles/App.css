@@ -14,7 +14,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   overflow: hidden scroll;
-  background-color: #e7e7e7;
+  background-color: #010b13;
+  cursor: none;
 }
 .App {
   z-index: 99;

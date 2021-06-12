@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./styles/fonts.css";
 import "./styles/App.css";
 import About from "./Pages/About";
@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import Nav from "./Component/Nav";
 import Footer from "./Component/Footer";
-import AnimatedCursor from "./Component/Cursor";
+import { Cursor } from "./Component/Cursor";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -29,16 +29,15 @@ function App() {
     root.style.setProperty("--VW", `${window.innerWidth * 0.01}px`);
     root.style.setProperty("--VH", `${window.innerHeight * 0.01}px`);
   }, [root.style]);
-
   return (
     <>
-      <AnimatedCursor />
       <div className="grain"></div>
       <div className="App">
         <Router>
+          <Cursor />
           <Switch>
             <Route path="/" exact>
-              <Nav border="#252525" />
+              <Nav border="#e7e7e7" />
               <Home />
             </Route>
             <Route path="/work/:id" exact>
@@ -46,7 +45,7 @@ function App() {
               <Work />
             </Route>
             <Route path="/About" exact>
-              <Nav border="#252525" />
+              <Nav border="#e7e7e7" />
               <About />
             </Route>
           </Switch>

@@ -12,6 +12,16 @@ export const textReveal = {
     y: 0,
   },
 };
+export const showtext = {
+  initial: {
+    opacity: 0,
+    y: "100px",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+};
 export const expandLine = {
   initial: {
     width: 0,
@@ -31,6 +41,7 @@ export const expandDiv = {
     scale: 1,
   },
 };
+
 export const ImageBox = ({ children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -99,6 +110,31 @@ export const LineinView = ({ children }) => {
       transition={{
         duration: 1.2,
         type: "Tween",
+        ease: [0.6, -0.05, 0.01, 0.9],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+export const Showtext = ({ children }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    }
+  }, [controls, inView]);
+  return (
+    <motion.div
+      ref={ref}
+      variants={showtext}
+      initial="initial"
+      animate={controls}
+      transition={{
+        duration: 0.6,
+        type: "Spring",
         ease: [0.6, -0.05, 0.01, 0.9],
       }}
     >
