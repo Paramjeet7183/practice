@@ -9,7 +9,7 @@ import Footer from "./Component/Footer";
 import { Cursor } from "./Component/Cursor";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { Panels } from "./Component/Load";
 function App() {
   const root = document.documentElement;
   const width = window.innerWidth;
@@ -31,21 +31,20 @@ function App() {
   }, [root.style]);
   return (
     <>
+      <Panels />
       <div className="grain"></div>
       <div className="App">
         <Router>
           <Cursor />
+          <Nav border="#e7e7e7" />
           <Switch>
             <Route path="/" exact>
-              <Nav border="#e7e7e7" />
               <Home />
             </Route>
             <Route path="/work/:id" exact>
-              <Nav border="#e7e7e7" />
               <Work />
             </Route>
             <Route path="/About" exact>
-              <Nav border="#e7e7e7" />
               <About />
             </Route>
           </Switch>

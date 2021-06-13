@@ -11,7 +11,7 @@ function BigText() {
           animate="animate"
           transition={{
             type: "Tween",
-            delay: 0.5,
+            delay: 3.5,
             duration: 1,
             ease: [0.6, -0.05, 0.01, 0.9],
           }}
@@ -25,7 +25,7 @@ function BigText() {
           animate="animate"
           transition={{
             type: "Tween",
-            delay: 0.8,
+            delay: 3.8,
             duration: 1,
             ease: [0.6, -0.05, 0.01, 0.9],
           }}
@@ -39,7 +39,7 @@ function BigText() {
           animate="animate"
           transition={{
             type: "Tween",
-            delay: 1.1,
+            delay: 4.1,
             duration: 1,
             ease: [0.6, -0.05, 0.01, 0.9],
           }}
@@ -53,7 +53,7 @@ function BigText() {
           animate="animate"
           transition={{
             type: "Tween",
-            delay: 1.4,
+            delay: 4.4,
             duration: 1,
             ease: [0.6, -0.05, 0.01, 0.9],
           }}
@@ -66,7 +66,7 @@ function BigText() {
           animate="animate"
           transition={{
             type: "Tween",
-            delay: 1.7,
+            delay: 4.7,
             duration: 1,
             ease: [0.6, -0.05, 0.01, 0.9],
           }}

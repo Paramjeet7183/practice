@@ -1,12 +1,15 @@
-import React, { useRef, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React, { useRef, useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import hoverEffect from "hover-effect";
+import { works } from "../Component/Data";
 import Mask from "../Assets/heightMap.webp";
 import Footer from "../Component/Footer";
 import { Showtext } from "../Component/Animation";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-
+import { Panels } from "../Component/Load";
+import { motion } from "framer-motion";
+import { textReveal } from "../Component/Animation";
 const Line = styled.div`
   width: 100%;
   height: 1px;
@@ -23,20 +26,17 @@ const Container = styled.section`
     position: relative;
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
     span {
       display: block;
       width: 90vw;
       height: auto;
       bottom: 10vh;
-      left: 50%;
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+      left: 5vw;
       position: absolute;
       text-decoration: none;
       color: #e7e7e7;
@@ -174,60 +174,146 @@ const Device = styled.div`
     }
   }
 `;
+const Next = styled.div`
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+  height: 200px;
+  font-family: monument;
+  font-size: 6vw;
+  a {
+    display: block;
+    width: 35%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    -webkit-text-stroke: 1px #e7e7e7;
+    color: transparent;
+    text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+      color: #e7e7e7;
+      -webkit-text-stroke: none;
+    }
+  }
+`;
+
 function Work() {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [tablet, setTablet] = useState("");
+  const [git, setGit] = useState("");
+  const [live, setLive] = useState("");
+  const [next, setNext] = useState(null);
+  const [lang, setLang] = useState("");
+  const [bg, setBg] = useState("");
+  const [eximage, setEximage] = useState("");
   const containerRef = useRef(null);
-  const { state } = useLocation();
+  const { id } = useParams();
+
+  useEffect(() => {
+    const newWork = works.find((work) => work.id === parseInt(id));
+    setTitle(newWork.name);
+    setDesc(newWork.details);
+    setMobile(newWork.mobile);
+    setTablet(newWork.tablet);
+    setGit(newWork.github);
+    setLive(newWork.live);
+    setNext(newWork.next);
+    setBg(newWork.bg);
+    setLang(newWork.lang);
+    setEximage(newWork.eximages);
+  }, []);
 
   return (
-    <LocomotiveScrollProvider
-      options={{
-        smooth: true,
-      }}
-      containerRef={containerRef}
-    >
-      <Container data-scroll-container ref={containerRef}>
-        <div className="image">
-          <img src={state.works.bg} />
-          <span>{state.works.name}</span>
-        </div>
-        <Details>
-          <Line />
-          <Links>
-            <a href="">
-              <i class="fas fa-external-link-square-alt" />
-            </a>
-            <a href="">
-              <i class="fab fa-github-square" />
-            </a>
-          </Links>
-          <Desc>
-            <Showtext>
-              <p>{state.works.details}</p>
-            </Showtext>
-          </Desc>
-          <Lang>
-            <p>{state.works.lang}</p>
-          </Lang>
-        </Details>
-        <ImageGrid>
-          <img src={state.works.bg} />
-          <img src={state.works.bg} />
-          <img src={state.works.bg} />
-          <img src={state.works.bg} />
-        </ImageGrid>
-        <Device>
-          <div className="Mob">
-            <img src={state.works.mob1} />
-            <img src={state.works.mob2} />
+    <>
+      <Panels />
+      <LocomotiveScrollProvider
+        options={{
+          smooth: true,
+        }}
+        containerRef={containerRef}
+      >
+        <Container data-scroll-container ref={containerRef}>
+          <div className="image">
+            <motion.img
+              initial={{ scale: 1.5 }}
+              animate={{ scale: 1 }}
+              transition={{
+                delay: 3.3,
+                duration: 2,
+                type: "Spring",
+                ease: [0.6, -0.05, 0.01, 0.9],
+              }}
+              src={bg}
+            />
+            <motion.span
+              id="title"
+              variants={textReveal}
+              initial="initial"
+              animate="animate"
+              transition={{
+                duration: 1,
+                delay: 3.5,
+                ease: [0.6, -0.05, 0.01, 0.9],
+              }}
+            >
+              {title[0]}
+              <br />
+              {title[1]}
+            </motion.span>
           </div>
-          <div className="Tab">
-            <img src={state.works.tab1} />
-            <img src={state.works.tab2} />
-          </div>
-        </Device>
-        <Footer />
-      </Container>
-    </LocomotiveScrollProvider>
+          <Details>
+            <Line />
+            <Links>
+              <a href="">
+                <i class="fas fa-external-link-square-alt" />
+              </a>
+              <a href="">
+                <i class="fab fa-github-square" />
+              </a>
+            </Links>
+            <Desc>
+              <Showtext>
+                <p>{desc}</p>
+              </Showtext>
+            </Desc>
+            <Lang>
+              <p>{lang}</p>
+            </Lang>
+          </Details>
+          <ImageGrid>
+            <img src={eximage[0]} />
+            <img src={eximage[1]} />
+            <img src={eximage[2]} />
+            <img src={eximage[3]} />
+          </ImageGrid>
+          <Device>
+            <div className="Mob">
+              <img src={mobile[0]} />
+              <img src={mobile[1]} />
+            </div>
+            <div className="Tab">
+              <img src={tablet[0]} />
+              <img src={tablet[1]} />
+            </div>
+          </Device>
+          <Next>
+            <a href={next}>
+              <h>NEXT</h>
+              <i class="fad fa-chevron-right"></i>
+            </a>
+          </Next>
+          <Footer />
+        </Container>
+      </LocomotiveScrollProvider>
+    </>
   );
 }
 

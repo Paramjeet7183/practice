@@ -4,6 +4,7 @@ import { ImageBox, TextinView, LineinView } from "../Animation";
 import bg from "../bg.jpg";
 import { works } from "../Data";
 import { useLocation, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Footer from "../Footer";
 
 const Line = styled.div`
@@ -140,12 +141,7 @@ function Works() {
             <div className="col_1">
               <span>0{work.id}/</span>
               <span id="worklink">
-                <Link
-                  to={{
-                    pathname: `work/${work.id}`,
-                    state: { works: work },
-                  }}
-                >
+                <Link to={`work/${work.id}`}>
                   <i className="fal fa-external-link-square" />
                 </Link>
                 <span>{work.type}</span>
@@ -155,19 +151,22 @@ function Works() {
             <div className="col_2">
               <div className="img">
                 <ImageBox>
-                  <Link
-                    to={{
-                      pathname: `work/${work.id}`,
-                      state: { works: work },
-                    }}
-                  >
-                    <img src={work.bg} />
+                  <Link to={`work/${work.id}`}>
+                    <motion.img
+                      whileHover={{ scale: 1.3 }}
+                      transition={{ duration: 0.5, type: "Spring" }}
+                      src={work.bg}
+                    />
                   </Link>
                 </ImageBox>
               </div>
               <TextinView>
                 <span>
-                  <a>{work.name}</a>
+                  <a>
+                    {work.name[0]}
+                    <br />
+                    {work.name[1]}
+                  </a>
                 </span>
               </TextinView>
             </div>

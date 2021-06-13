@@ -12,6 +12,16 @@ export const textReveal = {
     y: 0,
   },
 };
+export const textReveal_1 = {
+  initial: {
+    opacity: 0,
+    y: "150%",
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+};
 export const showtext = {
   initial: {
     opacity: 0,
@@ -79,7 +89,7 @@ export const TextinView = ({ children }) => {
   return (
     <motion.div
       ref={ref}
-      variants={textReveal}
+      variants={textReveal_1}
       initial="initial"
       animate={controls}
       transition={{

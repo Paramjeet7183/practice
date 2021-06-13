@@ -16,7 +16,7 @@ const NavContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 999;
+  z-index: 10;
   .NavItems {
     display: flex;
     flex-direction: row;
@@ -48,7 +48,7 @@ const NavContainer = styled.section`
         color: inherit;
       }
       #work:after {
-        content: "Work";
+        content: "Print It";
         position: absolute;
         top: 100%;
         left: 0%;
@@ -61,7 +61,7 @@ function Nav({ border }) {
   return (
     <NavContainer>
       <div className="NavItems">
-        <span>
+        <span id="name">
           <a style={{ color: `${border}` }} href="/">
             Paramjeet Singh
           </a>
@@ -91,7 +91,7 @@ function Nav({ border }) {
             id="work"
             href="/"
           >
-            Work
+            Resume
           </motion.a>
         </span>
       </div>
@@ -101,7 +101,7 @@ function Nav({ border }) {
         initial="initial"
         animate="animate"
         transition={{
-          delay: 0.1,
+          delay: 3.5,
           duration: 2,
           type: "Inertia",
           ease: "easeIn",
