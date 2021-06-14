@@ -14,7 +14,7 @@ const HomeContainer = styled.section`
     position: relative;
     .Textwrapper {
       font-family: exil;
-      color: #e7e7e7;
+      color: #f9f2f5;
       font-size: 7.5vw;
       line-height: 100%;
       position: absolute;
@@ -33,7 +33,7 @@ const HomeContainer = styled.section`
         justify-content: space-between;
         span {
           font-size: 1rem;
-          color: #e7e7e7;
+          color: #f9f2f5;
           font-family: grotesk;
         }
       }

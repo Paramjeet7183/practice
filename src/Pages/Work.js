@@ -13,7 +13,7 @@ import { textReveal } from "../Component/Animation";
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #e7e7e7;
+  background-color: #f9f2f5;
 `;
 const Container = styled.section`
   width: 100vw;
@@ -39,7 +39,7 @@ const Container = styled.section`
       left: 5vw;
       position: absolute;
       text-decoration: none;
-      color: #e7e7e7;
+      color: #f9f2f5;
       font-size: 6vw;
       line-height: 97%;
       text-transform: uppercase;
@@ -64,7 +64,7 @@ const Links = styled.div`
   flex-direction: row;
   justify-content: space-between;
   a {
-    color: #e7e7e7;
+    color: #f9f2f5;
     text-decoration: none;
     font-size: 3rem;
   }
@@ -93,7 +93,7 @@ const Lang = styled.div`
     width: auto;
     font-size: 2rem;
     font-family: monument;
-    color: #e7e7e7;
+    color: #f9f2f5;
     word-spacing: 10px;
     @media (max-width: 1024px) {
       margin-left: 0%;

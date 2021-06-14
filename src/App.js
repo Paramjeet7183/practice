@@ -36,7 +36,7 @@ function App() {
       <div className="App">
         <Router>
           <Cursor />
-          <Nav border="#e7e7e7" />
+          <Nav border="#f9f2f5" />
           <Switch>
             <Route path="/" exact>
               <Home />

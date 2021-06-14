@@ -15,7 +15,7 @@ export const textReveal = {
 export const textReveal_1 = {
   initial: {
     opacity: 0,
-    y: "150%",
+    y: "200%",
   },
   animate: {
     opacity: 1,

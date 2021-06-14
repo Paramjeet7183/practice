@@ -16,7 +16,7 @@ const Container = styled.section`
   position: absolute;
   display: flex;
   flex-direction: column;
-  color: #e7e7e7;
+  color: #f9f2f5;
 `;
 const Cols = styled.div`
   width: 100%;

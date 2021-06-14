@@ -63,7 +63,7 @@ const Links = styled.div`
     color: inherit;
   }
   #gmail:after {
-    content: "Paramjeet7183@gmail.com";
+    content: "mail";
     position: absolute;
     top: 100%;
     left: 0%;
@@ -123,7 +123,7 @@ function Footer() {
           id="gmail"
           href="mailto:paramjeet7183@gmail.com"
         >
-          Paramjeet7183@gmail.com
+          Mail
         </motion.a>
         <motion.a
           whileHover={{ transform: "translateY(-100%)" }}

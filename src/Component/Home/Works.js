@@ -10,7 +10,7 @@ import Footer from "../Footer";
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #e7e7e7;
+  background-color: #f9f2f5;
 `;
 const WorksContainer = styled.section`
   width: 100%;
@@ -19,7 +19,7 @@ const WorksContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #e7e7e7;
+  color: #f9f2f5;
   .WorkItem {
     width: 100%;
     height: auto;
@@ -54,7 +54,7 @@ const WorksContainer = styled.section`
         span {
           font-family: exil;
           font-size: 5vw;
-          color: #e7e7e7;
+          color: #f9f2f5;
           height: 50%;
           width: auto;
           @media (max-width: 1024px) {
@@ -69,12 +69,12 @@ const WorksContainer = styled.section`
           a {
             text-decoration: none;
             font-size: 2rem;
-            color: #e7e7e7;
+            color: #f9f2f5;
           }
           span {
             font-family: grotesk;
             font-size: 1rem;
-            color: #e7e7e7;
+            color: #f9f2f5;
             tetx-transform: uppercase;
             writing-mode: vertical-lr;
           }
@@ -90,9 +90,6 @@ const WorksContainer = styled.section`
       .col_2 {
         width: 60%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         @media (max-width: 1024px) {
           margin-top: 10px;
           width: 100%;
@@ -100,11 +97,14 @@ const WorksContainer = styled.section`
         }
         .img {
           max-width: 100%;
-          max-height: 512px;
+          max-height: 100%;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           img {
             width: 100%;
-            height: 100%;
+            max-height: 512px;
           }
         }
         span {
@@ -159,8 +159,6 @@ function Works() {
                     />
                   </Link>
                 </ImageBox>
-              </div>
-              <TextinView>
                 <span>
                   <a>
                     {work.name[0]}
@@ -168,7 +166,7 @@ function Works() {
                     {work.name[1]}
                   </a>
                 </span>
-              </TextinView>
+              </div>
             </div>
           </div>
         </div>

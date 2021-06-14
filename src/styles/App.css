@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   overflow: hidden scroll;
-  background-color: #010b13;
+  background-color: #1b1a1a;
   cursor: none;
 }
 .App {
@@ -31,7 +31,7 @@ body {
   content: "";
   height: 300%;
   left: -50%;
-  opacity: 0.3;
+  opacity: 0.15;
   position: fixed;
   top: -110%;
   width: 300%;
