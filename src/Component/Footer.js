@@ -89,31 +89,13 @@ function Footer() {
     <Foot>
       <Line />
       <Links>
-        <motion.a
-          whileHover={{ transform: "translateY(-100%)" }}
-          transition={{
-            duration: 0.5,
-            type: "Tween",
-            ease: "easeOut",
-          }}
-          id="github"
-          href="https://github.com/Paramjeet7183"
-        >
+        <a id="github" href="https://github.com/Paramjeet7183">
           Github
-        </motion.a>
-        <motion.a
-          whileHover={{ transform: "translateY(-100%)" }}
-          transition={{
-            duration: 0.5,
-            type: "Tween",
-            ease: "easeOut",
-          }}
-          id="linkedin"
-          href="https://www.linkedin.com/in/paramjeetsingh7183/"
-        >
+        </a>
+        <a id="linkedin" href="https://www.linkedin.com/in/paramjeetsingh7183/">
           LinkedIn
-        </motion.a>
-        <motion.a
+        </a>
+        <a
           whileHover={{ transform: "translateY(-100%)" }}
           transition={{
             duration: 0.5,
@@ -124,31 +106,13 @@ function Footer() {
           href="mailto:paramjeet7183@gmail.com"
         >
           Mail
-        </motion.a>
-        <motion.a
-          whileHover={{ transform: "translateY(-100%)" }}
-          transition={{
-            duration: 0.5,
-            type: "Tween",
-            ease: "easeOut",
-          }}
-          id="twitter"
-          href="https://twitter.com/Paramje183"
-        >
+        </a>
+        <a id="twitter" href="https://twitter.com/Paramje183">
           Twitter
-        </motion.a>
-        <motion.a
-          whileHover={{ transform: "translateY(-100%)" }}
-          transition={{
-            duration: 0.5,
-            type: "Tween",
-            ease: "easeOut",
-          }}
-          id="dribble"
-          href="https://dribbble.com/Param7183"
-        >
+        </a>
+        <a id="dribble" href="https://dribbble.com/Param7183">
           Dribble
-        </motion.a>
+        </a>
       </Links>
     </Foot>
   );

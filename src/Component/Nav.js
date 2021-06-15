@@ -23,6 +23,9 @@ const NavContainer = styled.section`
     justify-content: space-between;
     font-size: 1rem;
     font-family: excon;
+    @media (max-width: 500px) {
+      font-size: 0.7rem;
+    }
     span {
       display: inline-block;
     }
@@ -63,7 +66,7 @@ function Nav({ border }) {
       <div className="NavItems">
         <span id="name">
           <a style={{ color: `${border}` }} href="/">
-            Paramjeet Singh
+            Paramjeet
           </a>
         </span>
         <span id="links">
@@ -89,7 +92,7 @@ function Nav({ border }) {
               ease: "easeOut",
             }}
             id="work"
-            href="/"
+            href="/Resume"
           >
             Resume
           </motion.a>

@@ -10,25 +10,9 @@ import { Cursor } from "./Component/Cursor";
 import { AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Panels } from "./Component/Load";
+import Error from "./Pages/Error";
+import Resume from "./Pages/Resume";
 function App() {
-  const root = document.documentElement;
-  const width = window.innerWidth;
-
-  window.addEventListener("resize", () => {
-    const newWidth = window.innerWidth;
-    if (newWidth < 500) {
-      if (newWidth !== width) {
-        window.location.reload();
-      }
-    } else {
-      window.location.reload();
-    }
-  });
-
-  useEffect(() => {
-    root.style.setProperty("--VW", `${window.innerWidth * 0.01}px`);
-    root.style.setProperty("--VH", `${window.innerHeight * 0.01}px`);
-  }, [root.style]);
   return (
     <>
       <Panels />
@@ -36,16 +20,25 @@ function App() {
       <div className="App">
         <Router>
           <Cursor />
-          <Nav border="#f9f2f5" />
           <Switch>
             <Route path="/" exact>
+              <Nav border="#f9f2f5" />
               <Home />
             </Route>
             <Route path="/work/:id" exact>
+              <Nav border="#f9f2f5" />
               <Work />
             </Route>
             <Route path="/About" exact>
+              <Nav border="#f9f2f5" />
               <About />
+            </Route>
+            <Route path="/Resume" exact>
+              <Nav border="#f9f2f5" />
+              <Resume />
+            </Route>
+            <Route path="*" exact>
+              <Error />
             </Route>
           </Switch>
         </Router>

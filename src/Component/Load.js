@@ -39,10 +39,10 @@ const PanelStyles = styled(motion.div)`
     text-align: center;
     transform: translate(-50%, -50%);
     color: #010b13;
-    font-size: calc(var(--VW) * 2);
+    font-size: 2vw;
     z-index: 31;
     @media (hover: none) and (pointer: coarse), (max-width: 500px) {
-      font-size: calc(var(--VW) * 4);
+      font-size: 4vw;
     }
   }
 `;

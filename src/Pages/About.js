@@ -5,7 +5,6 @@ import Prof2 from "../Assets/Profile.jpg";
 import hoverEffect from "hover-effect";
 import Mask from "../Assets/glass.webp";
 import { Panels } from "../Component/Load";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 const Container = styled.section`
   width: 90vw;
