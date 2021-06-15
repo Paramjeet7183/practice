@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ImageBox, TextinView, LineinView } from "../Animation";
+import { ImageBox, LineinView } from "../Animation";
 import bg from "../bg.jpg";
 import { works } from "../Data";
 import { useLocation, Link } from "react-router-dom";
@@ -82,6 +82,7 @@ const WorksContainer = styled.section`
             flex-direction: row;
             margin-top: 20px;
             span {
+              margin-top: 20px;
               writing-mode: horizontal-tb;
             }
           }
@@ -102,9 +103,14 @@ const WorksContainer = styled.section`
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          img {
+          .imageBox {
             width: 100%;
             max-height: 512px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+            }
           }
         }
         span {

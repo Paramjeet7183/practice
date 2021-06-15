@@ -64,11 +64,12 @@ export const ImageBox = ({ children }) => {
   return (
     <motion.div
       ref={ref}
+      class="imageBox"
       variants={expandDiv}
       initial="initial"
       animate={controls}
       transition={{
-        duration: 1,
+        duration: 0.5,
         type: "Spring",
         ease: "easeOut",
       }}
@@ -77,31 +78,7 @@ export const ImageBox = ({ children }) => {
     </motion.div>
   );
 };
-export const TextinView = ({ children }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("animate");
-    }
-  }, [controls, inView]);
-  return (
-    <motion.div
-      ref={ref}
-      variants={textReveal_1}
-      initial="initial"
-      animate={controls}
-      transition={{
-        duration: 1,
-        type: "Tween",
-        ease: [0.6, -0.05, 0.01, 0.9],
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
 export const LineinView = ({ children }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -118,7 +95,7 @@ export const LineinView = ({ children }) => {
       initial="initial"
       animate={controls}
       transition={{
-        duration: 1.2,
+        duration: 0.6,
         type: "Tween",
         ease: [0.6, -0.05, 0.01, 0.9],
       }}

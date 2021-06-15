@@ -184,7 +184,7 @@ function About(props) {
           </div>
           <div className="langblock">
             <h1>Languages</h1>
-            <p>Python , HTML , CSS , JS , C++ , PHP .</p>
+            <p>Python , HTML , CSS , JS , C++.</p>
           </div>
           <div className="langblock">
             <h1>Frameworks/Library</h1>
@@ -195,7 +195,7 @@ function About(props) {
           </div>
           <div className="langblock">
             <h1>Others</h1>
-            <p>Firebase , Sql , Mongo DB , No Sql .</p>
+            <p>Firebase , Sql , Mongo DB.</p>
           </div>
           <div className="langblock">
             <h1>Education</h1>
