@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import resume from "../Assets/Resume.png";
-import doc from "../Assets/Resume.pdf";
 const Container = styled.section`
   width: 90vw;
   min-height: 100vh;
