@@ -16,25 +16,25 @@ function App() {
   return (
     <>
       <Panels />
-      <div className="grain"></div>
+      <div className="grain" />
       <div className="App">
         <Router>
           <Cursor />
           <Switch>
             <Route path="/" exact>
-              <Nav border="#f9f2f5" />
+              <Nav border="var(--text)" />
               <Home />
             </Route>
             <Route path="/work/:id" exact>
-              <Nav border="#f9f2f5" />
+              <Nav border="var(--bg)" />
               <Work />
             </Route>
             <Route path="/About" exact>
-              <Nav border="#f9f2f5" />
+              <Nav border="var(--text)" />
               <About />
             </Route>
             <Route path="/Resume" exact>
-              <Nav border="#f9f2f5" />
+              <Nav border="var(--text)" />
               <Resume />
             </Route>
             <Route path="*" exact>

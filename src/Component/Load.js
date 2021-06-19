@@ -20,7 +20,7 @@ const PanelStyles = styled(motion.div)`
     position: absolute;
     top: 0;
     z-index: 30;
-    background-color: #f9f2f5;
+    background-color: var(--text);
   }
 
   .left {
@@ -38,7 +38,7 @@ const PanelStyles = styled(motion.div)`
     width: 100%;
     text-align: center;
     transform: translate(-50%, -50%);
-    color: #010b13;
+    color: var(--bg);
     font-size: 2vw;
     z-index: 31;
     @media (hover: none) and (pointer: coarse), (max-width: 500px) {

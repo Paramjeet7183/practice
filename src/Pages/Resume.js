@@ -16,7 +16,7 @@ const Container = styled.section`
       max-height: 842px;
       text-align: center;
       a {
-        color: white;
+        color: var(--text);
         font-size: 5vw;
         font-family: monument;
       }

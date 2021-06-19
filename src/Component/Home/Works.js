@@ -10,7 +10,7 @@ import Footer from "../Footer";
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #f9f2f5;
+  background-color: var(--text);
 `;
 const WorksContainer = styled.section`
   width: 100%;
@@ -19,7 +19,7 @@ const WorksContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #f9f2f5;
+  color: var(--text);
   .WorkItem {
     width: 100%;
     height: auto;
@@ -54,7 +54,7 @@ const WorksContainer = styled.section`
         span {
           font-family: exil;
           font-size: 5vw;
-          color: #f9f2f5;
+          color: var(--text);
           height: 50%;
           width: auto;
           @media (max-width: 1024px) {
@@ -69,12 +69,12 @@ const WorksContainer = styled.section`
           a {
             text-decoration: none;
             font-size: 2rem;
-            color: #f9f2f5;
+            color: var(--text);
           }
           span {
             font-family: grotesk;
             font-size: 1rem;
-            color: #f9f2f5;
+            color: var(--text);
             tetx-transform: uppercase;
             writing-mode: vertical-lr;
           }

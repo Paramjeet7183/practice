@@ -7,7 +7,7 @@ const Err = styled.div`
   height: 100vh;
   position: fixed;
   inset: 0;
-  color: #f9f2f5;
+  color: var(--text);
   div {
     width: auto;
     height: 100%;
@@ -28,7 +28,7 @@ const Err = styled.div`
     text-align: center;
     display: block;
     font-size: 6vw;
-    color: #f9f2f5;
+    color: var(--text);
   }
 `;
 

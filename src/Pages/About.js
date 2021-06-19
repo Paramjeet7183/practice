@@ -15,7 +15,7 @@ const Container = styled.section`
   position: absolute;
   display: flex;
   flex-direction: column;
-  color: #f9f2f5;
+  color: var(--text);
 `;
 const Cols = styled.div`
   width: 100%;
@@ -95,7 +95,7 @@ const Credits = styled.div`
       color: inherit;
       transition: 0.5s;
       &:hover {
-        -webkit-text-stroke: 1px #e7e7e7;
+        -webkit-text-stroke: 1px var(--text);
         color: transparent;
       }
     }
@@ -114,11 +114,11 @@ const Credits = styled.div`
     }
     #talk {
       color: transparent;
-      -webkit-text-stroke: 1px #e7e7e7;
+      -webkit-text-stroke: 1px var(--text);
       font-size: 10vw;
       transition: 0.5s;
       &:hover {
-        color: #e7e7e7;
+        color: var(--text);
         -webkit-text-stroke: none;
       }
     }

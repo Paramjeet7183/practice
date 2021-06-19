@@ -16,7 +16,7 @@ const Line = styled.div`
   width: 100%;
   height: 1px;
   padding-bottom: 40px;
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid var(--text);
   background-color: transparent;
 `;
 const Links = styled.div`
@@ -37,7 +37,7 @@ const Links = styled.div`
 
   a {
     text-decoration: none;
-    color: #e7e7e7;
+    color: var(--text);
     font-size: 1rem;
     font-family: excon;
     position: relative;

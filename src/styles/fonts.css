@@ -14,3 +14,15 @@
   font-family: excon;
   src: url("../Fonts/Excon-Light.ttf");
 }
+@font-face {
+  font-family: gothamm;
+  src: url("../Fonts/GothamMedium.ttf");
+}
+@font-face {
+  font-family: gothambl;
+  src: url("../Fonts/Gotham-Black.otf");
+}
+@font-face {
+  font-family: gothambo;
+  src: url("../Fonts/Gotham-Bold.otf");
+}

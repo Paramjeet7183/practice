@@ -12,8 +12,8 @@ const CursorStyles = styled(motion.div)`
   height: 0.36vw;
   padding: 1.5vw;
   border-radius: 100%;
-  background-color: #f9f2f5;
-  border: 0.1vw solid #f9f2f5;
+  background-color: var(--text);
+  border: 0.1vw solid var(--text);
   mix-blend-mode: difference;
   z-index: 20;
   @media (hover: none) and (pointer: coarse), (max-width: 500px) {
@@ -29,7 +29,7 @@ const PointerStyles = styled.div`
   width: 0.6vw;
   height: 0.6vw;
   border-radius: 100%;
-  background-color: #f9f2f5;
+  background-color: var(--text);
   transform: translate(-50%, -50%);
   z-index: 20;
   &.on-focus {
@@ -54,7 +54,7 @@ const Cursor = () => {
           scale: 1,
           opacity: 0.15,
           border: "none",
-          backgroundColor: "#f9f2f5",
+          backgroundColor: `black`,
         }}
         transition={{ ease: "linear", duration: 0.15 }}
       />

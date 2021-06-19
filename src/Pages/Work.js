@@ -13,7 +13,7 @@ import { textReveal } from "../Component/Animation";
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #f9f2f5;
+  background-color: var(--text);
 `;
 const Container = styled.section`
   width: 100vw;
@@ -39,7 +39,7 @@ const Container = styled.section`
       left: 5vw;
       position: absolute;
       text-decoration: none;
-      color: #f9f2f5;
+      color: var(--bg);
       font-size: 6vw;
       line-height: 97%;
       text-transform: uppercase;
@@ -64,7 +64,7 @@ const Links = styled.div`
   flex-direction: row;
   justify-content: space-between;
   a {
-    color: #f9f2f5;
+    color: var(--text);
     text-decoration: none;
     font-size: 3rem;
   }
@@ -77,7 +77,7 @@ const Desc = styled.div`
     width: 30vw;
     font-size: 1.5rem;
     font-family: grotesk;
-    color: #e7e7e7;
+    color: var(--text);
     word-spacing: 10px;
     @media (max-width: 1024px) {
       margin-left: 0%;
@@ -93,7 +93,7 @@ const Lang = styled.div`
     width: auto;
     font-size: 2rem;
     font-family: monument;
-    color: #f9f2f5;
+    color: var(--text);
     word-spacing: 10px;
     @media (max-width: 1024px) {
       margin-left: 0%;
@@ -192,12 +192,12 @@ const Next = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    -webkit-text-stroke: 1px #e7e7e7;
+    -webkit-text-stroke: 1px var(--text);
     color: transparent;
     text-decoration: none;
     transition: 0.5s;
     &:hover {
-      color: #e7e7e7;
+      color: var(--text);
       -webkit-text-stroke: none;
     }
   }

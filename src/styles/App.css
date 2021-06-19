@@ -1,3 +1,8 @@
+:root {
+  --bg: #e7e7e7;
+  --text: #252525;
+}
+
 body {
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -14,7 +19,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   overflow: hidden scroll;
-  background-color: #1b1a1a;
+  background-color: var(--bg);
   cursor: none;
 }
 .App {
