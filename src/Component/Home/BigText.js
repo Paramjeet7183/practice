@@ -75,8 +75,8 @@ function BigText() {
           <span id="arrow">
             <i class="fal fa-chevron-double-down"></i>
           </span>
-          <span>My best Work</span>
-          <span>6 Projects</span>
+          <span>Scroll Down</span>
+          <span></span>
         </motion.span>
       </div>
     </div>

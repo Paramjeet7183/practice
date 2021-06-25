@@ -17,7 +17,7 @@ import coding from "../Assets/coding.jpg";
 export const works = [
   {
     name: ["coronavirus", "tracker"],
-    type: "WEBDEVELOPMENT",
+    type: "",
     id: 1,
     bg: `${covid}`,
     details: [
@@ -41,7 +41,7 @@ export const works = [
   },
   {
     name: ["instagram", "clone"],
-    type: "WEBDEVELOPMENT",
+    type: "",
     id: 2,
     bg: `${bg}`,
     details: [
@@ -56,8 +56,8 @@ export const works = [
     next: 3,
   },
   {
-    name: ["Tourism", "India"],
-    type: "WEBDEVELOPMENT",
+    name: ["Project", "3"],
+    type: "",
     id: 3,
     bg: `${india}`,
     details: [
@@ -73,7 +73,7 @@ export const works = [
   },
   {
     name: ["selfwriting", "website"],
-    type: "WEBDEVELOPMEN",
+    type: "",
     id: 4,
     bg: `${coding}`,
     details: [
@@ -89,7 +89,7 @@ export const works = [
   },
   {
     name: ["fitness", "website"],
-    type: "WEBDEVELOPMENT",
+    type: "",
     id: 5,
     bg: `${fitness}`,
     details: [

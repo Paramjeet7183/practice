@@ -148,28 +148,20 @@ function About(props) {
           </Col_1>
           <Col_2>
             <p>
-              For whatever reason that brought you to my portfolio, welcome. I
-              hope you enjoyed browsing this site as much as I enjoyed building
-              it. First off, please allow me to introduce myself. My name is
-              paramjeet singh i am from Indore , India and im 20 years old
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultricies sagittis hendrerit. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae; Aliquam
+              porttitor, eros nec sagittis tristique, justo risus feugiat massa,
+              ut consequat odio elit ut lorem.
             </p>
 
             <p>
-              I'm currently a student at the Lovely Professional University.
-            </p>
-
-            <p>
-              I am currently pursuing Bachelor Degree in Computer Science. In
-              the field of Web development. I love Designing and Developing
-              Websites And looking for more oppurtunities to do the same at
-              Higher Level
-            </p>
-            <p>
-              I am a Fast Learner and have a great interest in Learning new
-              Things. I also have great interest in sports like Cricket &
-              Football beacuase i am not a nerd. I created several Great
-              projects in previous 3 years. Some of them You can see in this
-              portfolio. Hope You Will Like it.
+              Ut luctus fermentum risus, in fringilla magna laoreet in.
+              Phasellus nec molestie nunc. Ut cursus lacinia nunc, quis
+              imperdiet leo ultricies eu. Aenean volutpat ligula vehicula ipsum
+              rhoncus, at gravida turpis elementum. Aliquam ornare, tellus non
+              condimentum tincidunt, est risus pretium ex, id vulputate magna
+              lectus vitae tortor.
             </p>
           </Col_2>
         </Cols>
@@ -183,13 +175,12 @@ function About(props) {
           </div>
           <div className="langblock">
             <h1>Languages</h1>
-            <p>Python , HTML , CSS , JS , C++.</p>
+            <p>Python , HTML , CSS , JS.</p>
           </div>
           <div className="langblock">
             <h1>Frameworks/Library</h1>
             <p>
-              React , React Native , Laravel , Framer-motion , Three.js , Pixi
-              Js, NodeJs
+              React , React Native , Laravel , Framer-motion , Three.js, NodeJs
             </p>
           </div>
           <div className="langblock">
